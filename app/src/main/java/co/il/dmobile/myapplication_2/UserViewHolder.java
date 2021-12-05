@@ -19,7 +19,7 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
 
         card = itemView.findViewById(R.id.card);
-        avatar = itemView.findViewById(R.id.avater);
+        avatar = itemView.findViewById(R.id.avatar);
         name = itemView.findViewById(R.id.name);
         email = itemView.findViewById(R.id.email);
 
