@@ -1,6 +1,7 @@
 package co.il.dmobile.myapplication_2;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     private List<User> Users;
+
     public UserAdapter(List<User> users)
     {
         this.Users = users;
@@ -25,6 +29,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
         Users.add(user);
         notifyDataSetChanged();
     }
+
+    public void DeleteUser(int position)
+    {
+        Users.remove(position);
+        notifyDataSetChanged();
+    }
+
 
     @NonNull
     @Override

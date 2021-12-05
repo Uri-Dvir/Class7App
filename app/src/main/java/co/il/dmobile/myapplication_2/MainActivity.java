@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new UserAdapter(users);
         recycler.setAdapter(adapter);
+        ItemTouchHelper helper = new ItemTouchHelper(new SwipeToDeleteCallback(adapter));
+        helper.attachToRecyclerView(recycler);
 
         FloatingActionButton btn = findViewById(R.id.fab);
         btn.setOnClickListener(new View.OnClickListener() {
